@@ -9,7 +9,7 @@ def fetch_top250_movies():
 
         headers = {
             "x-rapidapi-key": config.API_KEY,
-            "x-rapidapi-host": config.RAPID_HOST
+            "x-rapidapi-host": config.RAPID_HOST,
         }
 
         response = requests.get(url, headers=headers)
