@@ -2,9 +2,8 @@ import web_scraper
 import polars as pl
 
 
-def transform_data():
+def transform_data(api_data) -> pl.DataFrame:
     df = pl.DataFrame()
-    data = web_scraper.fetch_top250_movies()
 
     df_request = pl.json_normalize(data)
     df = pl.concat([df, df_request])
@@ -13,7 +12,9 @@ def transform_data():
         ["originalTitle", "interests", "countriesOfOrigin", "externalLinks", "spokenLanguages", "filmingLocations",
          "productionCompanies", "genres"])
     df_polars.write_csv("../data/processed_data.csv")
+    return df_polars
 
 
 if __name__ == "__main__":
-    transform_data()
+    data = web_scraper.fetch_top250_movies()
+    transform_data(data)
