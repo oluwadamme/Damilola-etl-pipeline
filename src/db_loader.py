@@ -1,15 +1,18 @@
+import logging
+
 import polars as pl
 from etl_pipeline.utils import utils
-from model import Movies,Base
+from etl_pipeline.src.model import Movies, Base
 
 
 def load_data(df: pl.DataFrame):
     Session, engine = utils.connect_with_db()
 
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
     with Session.begin() as session:
         # Inserting data into tables
-        for _, row in df.iter_rows():
+        for row in df.to_dicts():
             movie = session.query(Movies).filter_by(id=str(row["id"])).first()
             if not movie:
                 _movie = Movies(
@@ -32,5 +35,6 @@ def load_data(df: pl.DataFrame):
                 )
                 session.add(_movie)
         session.commit()
+        print("write to database successful")
 
     pass
