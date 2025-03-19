@@ -8,11 +8,12 @@ def transform_data():
 
     df_request = pl.json_normalize(data)
     df = pl.concat([df, df_request])
-    print(df.describe())
     df_polars = df.filter(~df.is_duplicated())
+    df_polars = df_polars.drop(
+        ["originalTitle", "interests", "countriesOfOrigin", "externalLinks", "spokenLanguages", "filmingLocations",
+         "productionCompanies", "genres"])
     df_polars.write_csv("../data/processed_data.csv")
 
 
-
-
-
+if __name__ == "__main__":
+    transform_data()
