@@ -22,7 +22,6 @@ def connect_with_db():
     try:
         engine = create_engine(DATABASE_URL)
         Session = sessionmaker(bind=engine)
-
         return Session, engine
     except Exception as e:
         logging.error(f"Database connection error: {str(e)}")
