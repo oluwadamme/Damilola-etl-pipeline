@@ -27,5 +27,5 @@ def transform_data(api_data) -> pl.DataFrame:
         df_polars["numVotes"].fill_null(0),
         df_polars["contentRating"].fill_null(""),
     )
-    df_polars_without_null.write_csv("../data/processed_data.csv")
+    df_polars_without_null.write_csv("data/processed_data.csv")
     return df_polars_without_null

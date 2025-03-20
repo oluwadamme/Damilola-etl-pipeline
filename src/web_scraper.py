@@ -18,13 +18,9 @@ def fetch_top250_movies():
             raise response.raise_for_status()
 
         movies = response.json()
-        utils.write_to_file("../data/top_250_movies.json", movies)
+        utils.write_to_file("data/top_250_movies.json", movies)
 
         return movies
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
         raise e
-
-
-if __name__ == "__main__":
-    fetch_top250_movies()
