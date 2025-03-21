@@ -1,4 +1,5 @@
-from sqlalchemy import String, Integer, Date, DECIMAL, Boolean
+from sqlalchemy import String, Integer, Date, DECIMAL, Boolean, JSON
+import json
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -24,3 +25,10 @@ class Movies(Base):
     runtimeMinutes: Mapped[int] = mapped_column(Integer(), nullable=False)
     numVotes: Mapped[float] = mapped_column(DECIMAL(10, 2), nullable=False)
     isAdult: Mapped[bool] = mapped_column(Boolean(), nullable=False)
+    genres: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    interests: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    countriesOfOrigin: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    spokenLanguages: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    filmingLocations: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    productionCompanies: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])
+    externalLinks: Mapped[json] = mapped_column(JSON(), nullable=True, default=[])

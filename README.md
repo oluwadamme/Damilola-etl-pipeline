@@ -49,7 +49,6 @@ This ETL (Extract, Transform, Load) pipeline is designed to efficiently process 
 ## Usage
 Run the ETL pipeline with:
 ```sh
-cd scripts
 python -m run_pipeline.py
 ```
 

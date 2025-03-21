@@ -32,9 +32,14 @@ def load_data(df: pl.DataFrame):
                         runtimeMinutes=row["runtimeMinutes"],
                         numVotes=row["numVotes"],
                         isAdult=row["isAdult"],
+                        genres=row["genres"],
+                        interests=row["interests"],
+                        countriesOfOrigin=row["countriesOfOrigin"],
+                        spokenLanguages=row["spokenLanguages"],
+                        filmingLocations=row["filmingLocations"],
+                        productionCompanies=row["productionCompanies"],
+                        externalLinks=row["externalLinks"],
                     )
                     session.add(_movie)
             session.commit()
             print("write to database successful")
-
-    pass
