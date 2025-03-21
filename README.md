@@ -20,13 +20,23 @@ This ETL (Extract, Transform, Load) pipeline is designed to efficiently process 
 │── README.md           # Project documentation
 │── src/
 │   ├── __init__.py     # Package initialization
-│   ├── extract.py      # Extraction logic
-│   ├── transform.py    # Data transformation logic
-│   ├── load.py         # Load processed data into a database
+│   ├── web_scraper.py      # Extraction logic
+│   ├── data_transform.py    # Data transformation logic
+│   ├── db_loader.py         # Load processed data into a database
+│   ├── model.py         # SQL alchemy model
+│── scripts/
+│   ├── __init__.py     # Package initialization
+│   ├── run_pipeline.py      # run etl pipeline logic
+│── utils/
+│   ├── __init__.py     # Package initialization
+│   ├── config.py      # load env variable to python
+│   ├── utils.py      # general utility functions
 │── tests/
-│   ├── test_extract.py # Unit tests for extraction
-│   ├── test_transform.py # Unit tests for transformation
-│   ├── test_load.py    # Unit tests for loading
+│   ├── __init__.py     # Package initialization
+│   ├── test_web_scraper.py # Unit tests for extraction
+│   ├── test_data_transform.py # Unit tests for transformation
+│   ├── test_db_loader.py    # Unit tests for loading
+│   ├── conftest.py    # Unit tests for loading
 ```
 
 ## Installation
