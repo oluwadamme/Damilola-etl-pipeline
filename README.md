@@ -49,7 +49,7 @@ This ETL (Extract, Transform, Load) pipeline is designed to efficiently process 
 ## Usage
 Run the ETL pipeline with:
 ```sh
-python -m run_pipeline.py
+python main.py
 ```
 
 To run tests:
