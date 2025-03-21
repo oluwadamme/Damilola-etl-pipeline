@@ -28,3 +28,4 @@ build/
 # Operating system specific files (e.g., macOS, Windows)
 .DS_Store
 Thumbs.db
+.env
