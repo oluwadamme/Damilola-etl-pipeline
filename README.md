@@ -9,6 +9,11 @@ This ETL (Extract, Transform, Load) pipeline is designed to efficiently process 
 - Database integration with `SQLAlchemy` and `psycopg2`
 - Configuration management using `.env` files
 - Unit testing with `pytest`
+   ```
+## Database table schema
+This is my table schema
+
+![API Documentation Screenshot](screenshots/db-schema.png)
 
 ## Project Structure
 ```
@@ -38,6 +43,9 @@ This ETL (Extract, Transform, Load) pipeline is designed to efficiently process 
 │   ├── test_db_loader.py    # Unit tests for loading
 │   ├── conftest.py    # Unit tests for loading
 ```
+## Result
+
+![API Documentation Screenshot](screenshots/db_result.png)
 
 ## Installation
 ### Prerequisites
