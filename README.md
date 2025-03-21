@@ -54,7 +54,7 @@ This is my table schema
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/oluwadamme/Damilola-etl-pipeline
    cd etl_pipeline
    ```
 2. Install dependencies:
