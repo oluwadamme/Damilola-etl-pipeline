@@ -1,11 +1,10 @@
 # Damilola ETL Pipeline
 
 ## Overview
-This ETL (Extract, Transform, Load) pipeline is designed to efficiently process and manage data. It extracts data from various sources, applies transformations, and loads the processed data into a database.
-
+This project implements an ETL (Extract, Transform, Load) pipeline to process movie data from the IMDB API (via RapidAPI). It efficiently extracts raw data, processes it for analysis, and stores it in a structured database format.
 ## Features
-- Data extraction from multiple sources
-- Efficient transformation using `polars`
+- Extract: Fetch movie data from the IMDB API using RapidAPI.
+- Transform: Clean and transform the extracted data using `Polars` (or optionally Pandas) for efficient processing.
 - Database integration with `SQLAlchemy` and `psycopg2`
 - Configuration management using `.env` files
 - Unit testing with `pytest`
